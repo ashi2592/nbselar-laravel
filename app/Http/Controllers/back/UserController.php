@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Models\User;
+use App\Models\Roles;
 use Hash;
 use Illuminate\Support\Facades\URL;
 
@@ -18,6 +19,9 @@ class UserController extends Controller
     */
     public function index()
     {
+        $roles = new Roles();
+        $role_data = $roles->get_features_access(2);
+        print_r($role_data[0]->feature_names);
      $data['users'] = User::all();
     return view('back\user.index', $data);
     }
