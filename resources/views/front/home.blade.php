@@ -9,7 +9,7 @@
                <!-- banner left -->
                <div class="col-lg-7 banner-left">
                   <h1>WELCOME TO OUR COMPANY !</h1>
-                  <p class="title-sub">Specializes and excel at offering customers Automatic Rice Mill Machine, Semi-Automatic Rice Plants and a lot more...</p>
+                  <p class="title-sub">Specializes  lorem ipsum  and excel at offering customers Automatic Rice Mill Machine, Semi-Automatic Rice Plants and a lot more...</p>
                   <br/>
                   <div class="row mb-4 mb-lg-0">
                      <div class="col-lg-11">
