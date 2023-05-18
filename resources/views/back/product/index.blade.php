@@ -76,7 +76,7 @@
                     </td>
                     <td>
                     @if($product->photo)
-                <img src="{{asset('/Images/products/'.$product->photo) }}" class="img-fluid" style="max-width:80px" alt="{{$product->photo}}">
+                <img src="{{asset(env('AWS_CLOUD_FRONT_ENDPOINT').$product->photo) }}" class="img-fluid" style="max-width:80px" alt="{{$product->photo}}">
                 @else
                 <img src="{{asset('img/thumbnail-default.jpg')}}" class="img-fluid" style="max-width:80px" alt="avatar.png">
                 @endif

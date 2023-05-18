@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -58,9 +58,9 @@ class ProductController extends Controller
         }
         if($request->file('photo')){
             $file= $request->file('photo');
-            $filename= date('YmdHi').$file->getClientOriginalName();
-            $file-> move(public_path('Images/Products'), $filename);
-            $data['photo']= $filename;
+            $filename=  "products/".date('YmdHi').$file->getClientOriginalName();
+            Storage::disk('s3')->put($filename, file_get_contents($file));
+            $data['photo'] = $filename;
         }
         $data['slug']=$slug;
         $data['is_featured']=$request->input('is_featured',0);

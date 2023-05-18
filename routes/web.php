@@ -66,3 +66,12 @@ Route::post('/category/update/{id}',[App\Http\Controllers\Back\CategoryControlle
 Route::get('/category/show/{id}',[App\Http\Controllers\Back\CategoryController::class, 'show'])->name('category.show');
 Route::post('/category/destroy/{id}',[App\Http\Controllers\Back\CategoryController::class, 'destroy'])->name('category.destroy');
 
+
+//expense
+Route::get('/expense',[App\Http\Controllers\Back\ExpenseController::class, 'index'])->name('expense.index');
+Route::get('/expense/create',[App\Http\Controllers\Back\ExpenseController::class, 'create'])->name('expense.create');
+Route::get('/expense/edit/{id}',[App\Http\Controllers\Back\ExpenseController::class, 'edit'])->name('expense.edit');
+Route::post('/expense/store',[App\Http\Controllers\Back\ExpenseController::class, 'store'])->name('expense.store');
+Route::post('/expense/update/{id}',[App\Http\Controllers\Back\ExpenseController::class, 'update'])->name('expense.update');
+Route::get('/expense/show/{id}',[App\Http\Controllers\Back\ExpenseController::class, 'show'])->name('expense.show');
+Route::post('/expense/destroy/{id}',[App\Http\Controllers\Back\ExpenseController::class, 'destroy'])->name('expense.destroy');

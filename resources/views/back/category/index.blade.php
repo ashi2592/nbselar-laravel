@@ -57,7 +57,7 @@
                 <td>{{$cat->parent_info->title ?? ''}}</td>
                 <td>
                 @if($cat->photo)
-                <img src="{{asset('/Images/categories/'.$cat->photo) }}" class="img-fluid" style="max-width:80px" alt="{{$cat->photo}}">
+                <img src="{{asset(env('AWS_CLOUD_FRONT_ENDPOINT').$cat->photo) }}" class="img-fluid" style="max-width:80px" alt="{{$cat->photo}}">
                 @else
                 <img src="{{asset('img/thumbnail-default.jpg')}}" class="img-fluid" style="max-width:80px" alt="avatar.png">
                 @endif

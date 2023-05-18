@@ -6,6 +6,7 @@ use Session;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 
 class CategoryController extends Controller
@@ -56,9 +57,9 @@ class CategoryController extends Controller
         }
         if($request->file('photo')){
             $file= $request->file('photo');
-            $filename= date('YmdHi').$file->getClientOriginalName();
-            $file-> move(public_path('Images/Categories'), $filename);
-            $data['photo']= $filename;
+            $filename=  "category/".date('YmdHi').$file->getClientOriginalName();
+            Storage::disk('s3')->put($filename, file_get_contents($file));
+            $data['photo'] = $filename;
         }
         $data['slug']=$slug;
         $data['is_parent']=$request->input('is_parent',0);
