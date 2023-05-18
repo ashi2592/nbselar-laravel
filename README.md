@@ -61,4 +61,18 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
+
+
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Download the CA bundle certificate file from the cURL website. You can find it at: https://curl.haxx.se/ca/cacert.pem
+Save the downloaded certificate file in your Laravel project's directory.
+Open your config/filesystems.php file.
+Locate the S3 configuration array and add the following line within it, pointing to the path of the downloaded certificate file:
+
+
+[curl]
+curl.cainfo = "C:\xampp\php\extras\ssl\cacert.pem"
+
+[openssl]
+openssl.cafile = "C:\xampp\php\extras\ssl\cacert.pem"
