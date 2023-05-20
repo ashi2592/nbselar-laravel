@@ -1,12 +1,12 @@
 <?php
-
+namespace App\Http\Controllers;
 namespace App\Http\Controllers\back;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Models\User;
-use App\Models\Roles;
+// use App\Models\Roles;
 use Hash;
 use Illuminate\Support\Facades\URL;
 
@@ -19,11 +19,11 @@ class UserController extends Controller
     */
     public function index()
     {
-        $roles = new Roles();
-        $role_data = $roles->get_features_access(2);
-        print_r($role_data[0]->feature_names);
+        // $roles = new Roles();
+        // $role_data = $roles->get_features_access(2);
+        // print_r($role_data[0]->feature_names);
      $data['users'] = User::all();
-    return view('back\user.index', $data);
+    return view('back.user.index', $data);
     }
     /**
     * Show the form for creating a new resource.
@@ -32,7 +32,7 @@ class UserController extends Controller
     */
     public function create(Request $request)
     {
-        return view('back\user.create');
+        return view('back.user.create');
     }
     /**
     * Store a newly created resource in storage.
@@ -86,7 +86,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);   
-        return view('back\user.edit', compact('user'));
+        return view('back.user.edit', compact('user'));
     }
 
     

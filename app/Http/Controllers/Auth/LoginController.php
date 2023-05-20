@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/user';
 
     /**
      * Create a new controller instance.

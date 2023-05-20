@@ -1,4 +1,5 @@
 <?php
+namespace App\Http\Controllers;
 namespace App\Http\Controllers\back;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
